@@ -6,7 +6,7 @@ dhcpy6d.conf
 Configuration file for DHCPv6 server dhcpy6d
 --------------------------------------------
 
-:Author: Copyright (C) 2012-2022 Henri Wahl <henri@dhcpy6d.de>
+:Author: Copyright (C) 2012-2024 Henri Wahl <henri@dhcpy6d.de>
 :Date:   2022-06-14
 :Version: 1.2.2
 :Manual section: 5
@@ -208,7 +208,13 @@ environments.
 
 **information_refresh_time = <seconds>**
     The lifetime of information given to clients as response to an *information-request* message.
-    *Default: 6000*
+    Used by option 83.
+*Default: 600*
+
+**solicitation_refresh_time = <seconds>**
+    The maximum time a client should wait before retransmitting a *solicit* message.
+    Used by option 82.
+    *Default: 1200*
 
 **ignore_iaid = yes|no**
     Ignore IAID when looking for leases in database. Might be of use in case some clients are changing their IAD for some unknown reason.
